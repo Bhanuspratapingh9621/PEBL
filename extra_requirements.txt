@@ -1,0 +1,9 @@
+# dev-only (use locally or in notebook)
+jupyter
+ipython
+ipykernel
+huggingface-hub
+transformers
+pydeck
+altair
+grpcio

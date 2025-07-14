@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Review Sentiment Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; background: #f8f9fa; }
+        .container { max-width: 600px; margin: auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        textarea { width: 100%; height: 150px; padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Amazon Review Sentiment Analyzer</h2>
+        <form action="/predict" method="POST">
+            <label for="review">Enter Review:</label><br>
+            <textarea name="review" required>{{ review if review else "" }}</textarea><br><br>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <strong>Predicted Sentiment: </strong>
+            {% if prediction == 'Positive' %}
+    <span style="color: green;">{{ prediction }}</span>
+{% elif prediction == 'Negative' %}
+    <span style="color: red;">{{ prediction }}</span>
+{% else %}
+    <span style="color: gray;">{{ prediction }}</span>
+{% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
