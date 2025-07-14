@@ -29,4 +29,4 @@ Deployment: Render
 Frontend: HTML, CSS (basic form)
 
 
-LIVE DEMO : https://sentiment-analysis-kykm.onrender.com/predict
+LIVE DEMO : 
